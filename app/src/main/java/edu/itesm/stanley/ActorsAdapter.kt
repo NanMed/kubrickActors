@@ -33,8 +33,8 @@ class ActorsAdapter(private val actors : List<Actor>)
         holder.anio.text = actor.anio
         holder.biografia.text = actor.biografia
         holder.itemView.setOnClickListener {
-            //val action = MoviesFragmentDirections.actionMoviesFragmentToMovieFragment(movie)
-            //holder.itemView.findNavController().navigate(action)
+            val action = ActorskFragmentDirections.actionActorskFragmentToActorFragment(actor)
+            holder.itemView.findNavController().navigate(action)
         }
     }
 
