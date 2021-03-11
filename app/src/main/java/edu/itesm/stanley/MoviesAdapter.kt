@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class MoviesAdapter(private val movies : List<Movie>)
@@ -31,6 +32,10 @@ class MoviesAdapter(private val movies : List<Movie>)
         holder.titulo.text = movie.titulo
         holder.anio.text = movie.anio
         holder.plot.text = movie.plot
+        holder.itemView.setOnClickListener {
+            val action = MoviesFragmentDirections.actionMoviesFragmentToMovieFragment(movie)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     // Cuantos elementos tiene la lista

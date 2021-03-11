@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_kubrick.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,7 +36,14 @@ class KubrickFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        movies.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_kubrickFragment_to_moviesFragment)
+            //Navigation.createNavigateOnClickListener(R.id.action_kubrickFragment_to_moviesFragment)
+        }
+        actors.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_kubrickFragment_to_actorskFragment)
+            //Navigation.createNavigateOnClickListener(R.id.action_kubrickFragment_to_actorskFragment)
+        }
     }
 
 
